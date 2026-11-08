@@ -1,3 +1,5 @@
+> Historical concept requirements. Targets and business numbers are assumptions, not measured results. See README.md for the working demo and delivered scope.
+
 # KPI Definitions — Breakfast Delivery Platform
 
 > This document defines every KPI tracked on the platform: what it measures, how it's calculated, the data source, ownership, and target. A shared KPI taxonomy prevents misalignment between teams.

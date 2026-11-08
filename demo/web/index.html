@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Breakfast reservation demo: server-side pricing, atomic time-slot capacity, order fulfilment, SQLite persistence and end-to-end tests."
+    />
+    <title>Morning Table · Interactive portfolio demo</title>
+    <meta name="theme-color" content="#9b4d14" />
+    <meta property="og:title" content="Morning Table" />
+    <meta
+      property="og:description"
+      content="Explore a working portfolio demo with transparent synthetic data, validated workflows and local persistence."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a href="#workspace" class="skip">Skip to workspace</a>
+    <header>
+      <a class="brand" href="/" id="brand"
+        ><img src="/logo.svg" alt="" width="32" height="32" /><span
+          id="brand-name"
+          >Workspace</span
+        ></a
+      ><span id="section-label">Operations</span
+      ><a href="/api/export.csv" class="export">Export CSV</a>
+    </header>
+    <main id="workspace">
+      <section class="intro">
+        <div>
+          <h1 id="title">Loading workspace…</h1>
+          <p id="subtitle">Connecting to the local demo.</p>
+        </div>
+        <div class="mode">
+          <span class="dot"></span> Synthetic data · local demo<span
+            id="clock"
+          ></span>
+        </div>
+      </section>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <section id="metrics" class="metrics" aria-label="Summary"></section>
+      <section id="analysis" class="analysis" aria-label="Analysis"></section>
+      <section class="workbench">
+        <div class="list-pane">
+          <div class="toolbar">
+            <h2 id="list-title">Records</h2>
+            <label class="search"
+              >Search
+              <input
+                id="search"
+                type="search"
+                placeholder="Name or reference" /></label
+            ><label
+              >Status
+              <select id="filter" aria-label="Status">
+                <option value="">All statuses</option>
+              </select></label
+            >
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption id="caption" class="sr-only">
+                Select a record to inspect and update
+              </caption>
+              <thead id="head"></thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+          <p id="count" class="count"></p>
+        </div>
+        <aside id="detail" aria-label="Selected record"></aside>
+      </section>
+      <section class="audit">
+        <h2>Activity log</h2>
+        <p>Committed changes in this local workspace. Timestamps are UTC.</p>
+        <ol id="events"></ol>
+      </section>
+      <footer>
+        <span id="footer-title"></span
+        ><span>Built by Philippe Godfroy · Portfolio demonstration</span
+        ><span>Data stays in your local SQLite database.</span>
+      </footer>
+    </main>
+  </body>
+</html>

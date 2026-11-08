@@ -1,0 +1,12 @@
+{
+  "name": "breakfast-delivery-platform-verification",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Browser verification only; the application has no Node runtime dependencies.",
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

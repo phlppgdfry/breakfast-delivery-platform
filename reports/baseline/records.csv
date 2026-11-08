@@ -1,0 +1,3 @@
+id,name,customer,box,quantity,total_cents,slot,postal,delivery,state,allergens_ack,version,status,value,context
+ORD-001,ORD-001 · Alex,Alex,Classic,1,1250,06:00–07:00,9000,2026-06-16,confirmed,True,1,Confirmed,€12.50,06:00–07:00
+ORD-002,ORD-002 · Sam,Sam,Brunch,2,3600,07:00–08:00,9030,2026-06-16,preparing,True,1,Preparing,€36.00,07:00–08:00

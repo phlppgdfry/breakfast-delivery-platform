@@ -1,3 +1,5 @@
+> Historical concept requirements. Targets and business numbers are assumptions, not measured results. See README.md for the working demo and delivered scope.
+
 # Business Requirements Document (BRD)
 ## AI-Powered Breakfast Delivery Platform
 

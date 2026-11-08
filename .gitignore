@@ -1,0 +1,11 @@
+# Local portfolio demo
+var/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.DS_Store
+
+node_modules/
+test-results/
+playwright-report/

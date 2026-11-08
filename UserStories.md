@@ -1,3 +1,5 @@
+> Historical concept requirements. Targets and business numbers are assumptions, not measured results. See README.md for the working demo and delivered scope.
+
 # User Stories — Breakfast Delivery Platform
 
 **Format:** `As a [role], I want to [action], so that [benefit].`  

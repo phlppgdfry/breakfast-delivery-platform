@@ -1,0 +1,95 @@
+{
+  "project": "Morning Table",
+  "mode": "synthetic baseline",
+  "clock": "Simulation clock · 15 June 2026, 20:00 Europe/Brussels",
+  "metrics": [
+    {
+      "label": "Morning orders",
+      "value": 2,
+      "note": "For the next delivery morning"
+    },
+    {
+      "label": "Reserved boxes",
+      "value": 3,
+      "note": "Capacity is measured in boxes"
+    },
+    {
+      "label": "Demo order value",
+      "value": "€48.50",
+      "note": "Simulated reservation; no money collected"
+    },
+    {
+      "label": "Average order",
+      "value": "€24.25",
+      "note": "Sum of order totals ÷ order count"
+    }
+  ],
+  "analysis": {
+    "title": "Freshness starts with a little planning.",
+    "headline": "Tonight’s orders. Tomorrow’s breakfast.",
+    "description": "Classic €12.50 · Brunch €18.00. Delivery in 9000 and 9030. Reserve before 22:00 for tomorrow. Allergen acknowledgement required. No payment or real dispatch takes place.",
+    "bars_title": "Reserved delivery capacity · boxes",
+    "bars": [
+      {
+        "label": "06:00–07:00",
+        "value": 25.0,
+        "display": "1/4"
+      },
+      {
+        "label": "07:00–08:00",
+        "value": 50.0,
+        "display": "2/4"
+      }
+    ],
+    "menu": {
+      "Classic": {
+        "cents": 1250,
+        "allergens": "Wheat, milk, egg"
+      },
+      "Brunch": {
+        "cents": 1800,
+        "allergens": "Wheat, milk, egg, sesame"
+      }
+    },
+    "slots": {
+      "06:00–07:00": 4,
+      "07:00–08:00": 4
+    }
+  },
+  "records": [
+    {
+      "id": "ORD-001",
+      "name": "ORD-001 · Alex",
+      "customer": "Alex",
+      "box": "Classic",
+      "quantity": 1,
+      "total_cents": 1250,
+      "slot": "06:00–07:00",
+      "postal": "9000",
+      "delivery": "2026-06-16",
+      "state": "confirmed",
+      "allergens_ack": true,
+      "version": 1,
+      "status": "Confirmed",
+      "value": "€12.50",
+      "context": "06:00–07:00"
+    },
+    {
+      "id": "ORD-002",
+      "name": "ORD-002 · Sam",
+      "customer": "Sam",
+      "box": "Brunch",
+      "quantity": 2,
+      "total_cents": 3600,
+      "slot": "07:00–08:00",
+      "postal": "9030",
+      "delivery": "2026-06-16",
+      "state": "preparing",
+      "allergens_ack": true,
+      "version": 1,
+      "status": "Preparing",
+      "value": "€36.00",
+      "context": "07:00–08:00"
+    }
+  ]
+}
