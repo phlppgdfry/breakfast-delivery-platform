@@ -4,12 +4,12 @@ Validation date: 8 November 2026. Fixtures represent June 2026 and are intention
 
 ## Recorded local result
 
-Python 3.14.10: **17 tests passed**. Chromium: **6 tests passed**. JavaScript syntax checks and Python compilation passed. The report command reproduced the committed synthetic baseline.
+Python 3.14.10: **18 tests passed**. Chromium: **7 tests passed**. JavaScript syntax checks and Python compilation passed. The report command reproduced the committed synthetic baseline.
 
 ## Automated checks
 
 - `make check`: Python unit/integration tests, HTTP round trips, invalid input, read/export round trip, durable state, stale-write rejection, simultaneous updates and audit-failure rollback; Python compilation; JavaScript syntax checks.
-- `npm run test:e2e`: six Chromium tests covering served brand assets, filters/empty state, responsive layouts at 390/768/1440 px and the domain workflow with reload persistence.
+- `npm run test:e2e`: seven Chromium tests covering served brand assets, filters/empty state, responsive layouts at 390/768/1440 px the domain workflow with reload persistence, and the public showcase.
 - `make report`: baseline JSON and CSV generated from the same domain calculations used by the browser.
 
 Domain coverage: 22:00 cutoff and timezone conversion, integer-cent price, zones, allergen acknowledgement, quantity validation, concurrent capacity and full fulfilment.

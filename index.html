@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Morning Table · Philippe Godfroy</title>
+    <meta
+      name="description"
+      content="A breakfast reservation and fulfilment demo with server-side prices, atomic delivery capacity and an end-to-end order board."
+    />
+    <meta name="theme-color" content="#9b4d14" />
+    <link
+      rel="canonical"
+      href="https://phlppgdfry.github.io/breakfast-delivery-platform/"
+    />
+    <meta property="og:title" content="Morning Table · Engineering portfolio" />
+    <meta
+      property="og:description"
+      content="A breakfast reservation and fulfilment demo with server-side prices, atomic delivery capacity and an end-to-end order board."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://phlppgdfry.github.io/breakfast-delivery-platform/"
+    />
+    <meta
+      property="og:image"
+      content="https://phlppgdfry.github.io/breakfast-delivery-platform/docs/preview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="showcase.css" />
+  </head>
+  <body>
+    <a class="skip" href="#project">Skip to project</a>
+    <header>
+      <a
+        href="https://phlppgdfry.github.io/breakfast-delivery-platform/"
+        class="brand"
+        ><img src="logo.svg" width="34" height="34" alt="" /><span
+          >Morning Table</span
+        ></a
+      >
+      <nav aria-label="Project navigation">
+        <a href="#walkthrough">Workflow</a><a href="#engineering">Engineering</a
+        ><a href="https://github.com/phlppgdfry/breakfast-delivery-platform"
+          >Source code</a
+        >
+      </nav>
+    </header>
+    <main id="project">
+      <section class="hero">
+        <div>
+          <h1>A better morning, planned tonight.</h1>
+          <p class="lead">
+            A breakfast reservation and fulfilment demo with server-side prices,
+            atomic delivery capacity and an end-to-end order board.
+          </p>
+          <div class="actions">
+            <a class="button" href="#run">Run the demo</a
+            ><a
+              class="button outline"
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform"
+              >Explore the repository</a
+            >
+          </div>
+        </div>
+        <div class="scope">
+          <strong>Local application. Public case study.</strong>This page
+          presents the working product and its engineering. Run the interactive
+          application locally. All displayed records and metrics are synthetic.
+        </div>
+      </section>
+      <figure class="preview">
+        <a href="docs/preview.png" aria-label="View full desktop screenshot"
+          ><img
+            src="docs/preview.png"
+            width="1440"
+            height="1100"
+            alt="Morning Table desktop workspace with metrics, comparison panel and actionable record inspector"
+            fetchpriority="high"
+        /></a>
+        <figcaption>
+          Actual application screenshot · Simulation clock · 15 June 2026, 20:00
+          Europe/Brussels · <a href="docs/mobile.png">View the mobile layout</a>
+        </figcaption>
+      </figure>
+      <section class="metrics" aria-label="Reproducible synthetic baseline">
+        <div class="metric">
+          <span>Morning orders</span><strong>2</strong
+          ><small>For the next delivery morning</small>
+        </div>
+        <div class="metric">
+          <span>Reserved boxes</span><strong>3</strong
+          ><small>Capacity is measured in boxes</small>
+        </div>
+        <div class="metric">
+          <span>Demo order value</span><strong>€48.50</strong
+          ><small>Simulated reservation; no money collected</small>
+        </div>
+        <div class="metric">
+          <span>Average order</span><strong>€24.25</strong
+          ><small>Sum of order totals ÷ order count</small>
+        </div>
+      </section>
+      <section class="content" id="walkthrough">
+        <div>
+          <h2>Follow the complete workflow.</h2>
+          <p>
+            Every action reaches a stored result. Validation errors explain the
+            rule that needs attention.
+          </p>
+          <ol>
+            <li>
+              Reserve three Classic boxes for a fictional customer in 9000, in
+              the 06:00–07:00 window. Acknowledge the displayed allergens.
+            </li>
+            <li>
+              The total is €37.50. Advance the order through preparation,
+              delivery handover and delivered.
+            </li>
+            <li>
+              Try another box in the same window: the seeded one plus your three
+              have exhausted the four-box capacity. Reload to verify the order
+              persists.
+            </li>
+          </ol>
+        </div>
+        <div id="run">
+          <h2>From clone to working demo.</h2>
+          <p>
+            Python 3.11+ is enough to run the application. No API key, account
+            or paid service is required.
+          </p>
+          <pre><code>git clone https://github.com/phlppgdfry/breakfast-delivery-platform.git
+cd breakfast-delivery-platform
+python3 -m demo.server</code></pre>
+          <p>
+            Then open <code>http://127.0.0.1:8115</code>. Your changes stay in a
+            local SQLite database. See the README for fresh workspaces, exports
+            and test instructions.
+          </p>
+          <div class="resources">
+            <a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform#readme"
+              >Setup guide</a
+            ><a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/blob/main/docs/case-study.md"
+              >Full case study</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="content" id="engineering">
+        <div>
+          <h2>Clear rules. Verifiable behaviour.</h2>
+          <h3>Domain logic owns the outcome.</h3>
+          <p>
+            Server-side validation, explicit use cases and derived metrics keep
+            browser inputs from becoming authoritative business state.
+          </p>
+          <h3>Changes commit together.</h3>
+          <p>
+            A record update and its audit entry share one transaction. Version
+            checks reject stale edits, and concurrent requests are tested
+            against real SQLite connections.
+          </p>
+          <div class="resources">
+            <a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/blob/main/docs/architecture.md"
+              >Architecture</a
+            ><a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/blob/main/docs/api.md"
+              >API contract</a
+            ><a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/tree/main/reports/baseline"
+              >Reproduce the evidence</a
+            >
+          </div>
+        </div>
+        <div class="evidence">
+          <h2>Evidence you can inspect.</h2>
+          <p>
+            Automated tests cover business boundaries, persistence, HTTP
+            responses, failed writes and simultaneous updates. Seven Chromium
+            checks cover the core task, branded assets, filtering and three
+            screen widths.
+          </p>
+          <p>
+            The repository records implementation limits and separates the
+            original concept from delivered functionality. Synthetic results are
+            never presented as customer outcomes.
+          </p>
+          <div class="resources">
+            <a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/actions/workflows/demo.yml"
+              >View CI results</a
+            ><a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/blob/main/docs/validation.md"
+              >Validation notes</a
+            ><a
+              href="https://github.com/phlppgdfry/breakfast-delivery-platform/blob/main/docs/runbook.md"
+              >Runbook</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span>Morning Table · Portfolio demonstration</span
+        ><span
+          >Designed and built by
+          <a href="https://github.com/phlppgdfry">Philippe Godfroy</a></span
+        >
+      </footer>
+    </main>
+  </body>
+</html>

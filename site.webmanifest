@@ -1,0 +1,16 @@
+{
+  "name": "Morning Table",
+  "short_name": "Morning Table",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#9b4d14",
+  "background_color": "#fff9ee",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
