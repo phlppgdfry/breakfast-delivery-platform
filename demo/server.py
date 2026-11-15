@@ -29,6 +29,13 @@ ASSETS.update(
 )
 
 
+def csv_cell(value):
+    """Neutralise spreadsheet formulas in text while preserving numeric cells."""
+    if isinstance(value, str) and value.startswith(("=", "+", "-", "@", "\t", "\r")):
+        return "'" + value
+    return value
+
+
 def handler_for(store):
     class Handler(BaseHTTPRequestHandler):
         def send(self, status, body, kind="application/json"):
@@ -69,16 +76,7 @@ def handler_for(store):
                 for row in rows:
                     # Prevent spreadsheet formula execution in exported user-controlled fields.
                     writer.writerow(
-                        {
-                            key: (
-                                "'" + str(value)
-                                if str(value).startswith(
-                                    ("=", "+", "-", "@", "\t", "\r")
-                                )
-                                else value
-                            )
-                            for key, value in row.items()
-                        }
+                        {key: csv_cell(value) for key, value in row.items()}
                     )
                 return self.send(200, output.getvalue(), "text/csv")
             if path in ASSETS:

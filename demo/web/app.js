@@ -197,14 +197,19 @@ function makeForm(spec, record) {
       );
     } catch (error) {
       busy = false;
+      let message = error.message;
       if (error.status === 409) {
-        snapshot = await request("/api/snapshot");
-        render();
+        try {
+          snapshot = await request("/api/snapshot");
+          render();
+        } catch {
+          message += " The workspace could not refresh. Reload and try again.";
+        }
       }
       document
         .querySelectorAll("form button")
         .forEach((b) => (b.disabled = false));
-      notice(error.message, true);
+      notice(message, true);
     }
   });
   return form;

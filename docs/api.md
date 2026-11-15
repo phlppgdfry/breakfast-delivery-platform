@@ -9,7 +9,7 @@ Base URL: `http://127.0.0.1:8115`. JSON is UTF-8. All records are synthetic.
 | `GET /api/export.csv` | Current presented records; union of keys preserves optional notes |
 | `POST /api/action` | Validate and commit one domain use case; return updated snapshot |
 
-Only explicitly allowed public assets are served. Database files, source files and directory traversal paths are not exposed. The CSV exporter prefixes formula-leading values for spreadsheet safety.
+Only explicitly allowed public assets are served. Database files, source files and directory traversal paths are not exposed. The CSV exporter prefixes formula-leading text for spreadsheet safety and preserves numeric measurements, including negative temperatures.
 
 Example action body:
 

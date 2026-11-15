@@ -1,3 +1,5 @@
+.PHONY: serve test check report
+
 serve:
 	python3 -m demo.server
 
@@ -7,7 +9,6 @@ test:
 check: test
 	python3 -m compileall -q demo tests
 	node --check demo/web/app.js
-
 	node --check demo/web/feature.js
 
 report:

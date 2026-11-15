@@ -8,7 +8,9 @@ A breakfast reservation and fulfilment demo with server-side prices, atomic deli
 
 ![Desktop workspace with synthetic data](docs/preview.png)
 
-## Run it in one command
+**Release:** [v1.0.0](https://github.com/phlppgdfry/breakfast-delivery-platform/releases/tag/v1.0.0) · Download the source ZIP on the release page, extract it and follow the start command below.
+
+## Run the local demo
 
 Requires Python 3.11+ with SQLite support. No pip install, account, API key or Node runtime is needed to run the application.
 
@@ -62,7 +64,7 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-The seven Chromium tests start an isolated Python server and temporary database, then clean it up. They cover branding/assets, filtering, 390/768/1440 px widths the complete domain workflow, and the public project page. GitHub Actions also runs Python tests on 3.11 and 3.14. See [validation evidence](docs/validation.md).
+The eight Chromium tests start an isolated Python server and temporary database, then clean it up. They cover branding/assets, filtering, 390/768/1440 px widths, the complete domain workflow, the public project page, and recovery when refreshing a stale record fails. GitHub Actions also runs Python tests on 3.11 and 3.14. See [validation evidence](docs/validation.md).
 
 Baseline evidence is committed in [reports/baseline/snapshot.json](reports/baseline/snapshot.json) and [records.csv](reports/baseline/records.csv). These are generated from the fixtures, not a screenshot of arbitrary runtime state.
 
